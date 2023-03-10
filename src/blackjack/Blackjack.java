@@ -3,14 +3,10 @@ package blackjack;
 public class Blackjack {
 
 	public static void main(String[] args) {
-		int winner = playBlackJack(10, 21);
-		System.out.println("And the winner is " + winner);
-		winner = playBlackJack(20, 18);
-		System.out.println("And the winner is " + winner);
-		winner = playBlackJack(1, 22);
-		System.out.println("And the winner is " + winner);
-		winner = playBlackJack(22, 23);
-		System.out.println("And the winner is " + winner);
+		System.out.println("And the winner is " + playBlackJack(10, 21));
+		System.out.println("And the winner is " + playBlackJack(20, 18));
+		System.out.println("And the winner is " + playBlackJack(1, 22));
+		System.out.println("And the winner is " + playBlackJack(22, 23));
 	}
 
 	public static int playBlackJack(int h1, int h2) {
