@@ -22,47 +22,47 @@ public class Coins {
 		System.out.printf("Items cost £%.2f and we have recived £%.2f, so the change we will give"
 				+ " is £%.2f with the following coins:%n", cost, received, change);
 
-		while (change > 20) {
+		while (change >= 20) {
 			System.out.printf("£%d, ", 20);
 			change -= 20;
 		}
-		while (change > 10) {
+		while (change >= 10) {
 			System.out.printf("£%d, ", 10);
 			change -= 10;
 		}
-		while (change > 5) {
+		while (change >= 5) {
 			System.out.printf("£%d, ", 5);
 			change -= 5;
 		}
-		while (change > 2) {
+		while (change >= 2) {
 			System.out.printf("£%d, ", 2);
 			change -= 2;
 		}
-		while (change > 1) {
-			System.out.printf("£%.2f, ", 1);
+		while (change >= 1) {
+			System.out.printf("£%d, ", 1);
 			change -= 1;
 		}
-		while (change > 0.50) {
+		while (change >= 0.50) {
 			System.out.printf("£%.2f, ", 0.50);
 			change -= 0.50;
 		}
-		while (change > 0.20) {
+		while (change >= 0.20) {
 			System.out.printf("£%.2f, ", 0.20);
 			change -= 0.20;
 		}
-		while (change > 0.10) {
+		while (change >= 0.10) {
 			System.out.printf("£%.2f, ", 0.10);
 			change -= 0.10;
 		}
-		while (change > 0.05) {
+		while (change >= 0.05) {
 			System.out.printf("£%.2f, ", 0.05);
 			change -= 0.05;
 		}
-		while (change > 0.02) {
+		while (change >= 0.02) {
 			System.out.printf("£%.2f, ", 0.02);
 			change -= 0.02;
 		}
-		while (change > 0.01) {
+		while (change >= 0.01) {
 			System.out.printf("£%.2f.", 0.01);
 			change -= 0.01;
 		}
