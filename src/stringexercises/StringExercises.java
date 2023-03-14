@@ -3,29 +3,36 @@ package stringexercises;
 public class StringExercises {
 
 	public static void main(String[] args) {
-		// playingWithString();
-		countWords("This is a well formatted sentence");
-		countWords("      This   is    not");
-		countWords("");
-		countWords("Theoneabovethisisempty");
-		countWords("                  ");
-		countWords("[]'[';;    ;''.;]]    !!!!!!!!@@         ");
+//		playingWithString();
+//		countWords("This is a well formatted sentence");
+//		countWords("      This   is    not");
+//		countWords("");
+//		countWords("Theoneabovethisisempty");
+//		countWords("                  ");
+//		countWords("[]'[';;    ;''.;]]    !!!!!!!!@@         ");
+//
+//		printVertical("This is a well formatted sentence");
+//		printVertical("      This   is    not");
+//		printVertical("");
+//		printVertical("Theoneabovethisisempty");
+//		printVertical("                  ");
+//		printVertical("[]'[';;    ;''.;]]    !!!!!!!!@@         ");
 
-		printVertical("This is a well formatted sentence");
-		printVertical("      This   is    not");
-		printVertical("");
-		printVertical("Theoneabovethisisempty");
-		printVertical("                  ");
-		printVertical("[]'[';;    ;''.;]]    !!!!!!!!@@         ");
+		printVerticalReverse("This is a well formatted sentence");
+		printVerticalReverse("      This   is    not");
+		printVerticalReverse("");
+		printVerticalReverse("Theoneabovethisisempty");
+		printVerticalReverse("                  ");
+		printVerticalReverse("[]'[';;    ;''.;]]    !!!!!!!!@@         ");
 
-		findString("      This   is    not", "not");
-		findString("      This   is    not", " n");
-		findString("      This   is    not", "numpty");
-		findString("      This   is    not", "      ");
-		findString("      This   is    not", "This");
-		findString("      This   is    not", "this");
-		findString("      This   is    not", "Hey ya");
-		findString("      This   is    not", "      This   is    not");
+//		findString("      This   is    not", "not");
+//		findString("      This   is    not", " n");
+//		findString("      This   is    not", "numpty");
+//		findString("      This   is    not", "      ");
+//		findString("      This   is    not", "This");
+//		findString("      This   is    not", "this");
+//		findString("      This   is    not", "Hey ya");
+//		findString("      This   is    not", "      This   is    not");
 
 	}
 
@@ -96,17 +103,19 @@ public class StringExercises {
 		System.out.printf("%nThe sentence {%s} printed vertically in reverse:%n", sentence);
 		boolean lookingForWord = true;
 		int currentWordEnd = 0;
-		for (int i = sentence.length(); i < 0; --i) {
+		System.out.println("Length: " + sentence.length());
+		for (int i = sentence.length() - 1; i >= 0; i--) {
+			// System.out.println(i);
 			if (lookingForWord) {
 				if (!(sentence.charAt(i) == ' ')) {
-					// New word beginning
+					// New word ending
 					lookingForWord = false;
-					currentWordEnd = i;
+					currentWordEnd = i + 1;
 				}
 			} else {
 				if (sentence.charAt(i) == ' ') {
 					lookingForWord = true;
-					System.out.println(sentence.substring(i, currentWordEnd));
+					System.out.println(sentence.substring(i + 1, currentWordEnd));
 				}
 			}
 		}
