@@ -2,7 +2,7 @@ package garage.exercise;
 
 public class Vehicle {
 
-	private int wheels = 0;
+	private int id = 0;
 
 	private int riders = 0;
 
@@ -14,19 +14,19 @@ public class Vehicle {
 
 	}
 
-	public Vehicle(int wheels, int riders, String make, String model) {
-		setWheels(wheels);
+	public Vehicle(int id, int riders, String make, String model) {
+		setID(id);
 		setRiders(riders);
 		setMake(make);
 		setModel(model);
 	}
 
-	public int getWheels() {
-		return wheels;
+	public int getID() {
+		return id;
 	}
 
-	public void setWheels(int wheels) {
-		this.wheels = wheels;
+	public void setID(int id) {
+		this.id = id;
 	}
 
 	public int getRiders() {
@@ -54,8 +54,7 @@ public class Vehicle {
 	}
 
 	public void printInfo() {
-		System.out.printf("A %s %s has %d wheels and can carry %d people%n", this.make, this.model, this.riders,
-				this.wheels);
+		System.out.printf("Vehicle #%d: A %s %s can carry %d people%n", this.id, this.make, this.model, this.riders);
 	}
 
 }

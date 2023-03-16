@@ -4,8 +4,8 @@ public class Car extends Vehicle {
 
 	private boolean hasBoot = false;
 
-	public Car(int wheels, int riders, String make, String model, boolean hasBoot) {
-		super(wheels, riders, make, model);
+	public Car(int id, int riders, String make, String model, boolean hasBoot) {
+		super(id, riders, make, model);
 		setHasBoot(hasBoot);
 	}
 
@@ -13,7 +13,7 @@ public class Car extends Vehicle {
 		super();
 	}
 
-	public boolean isHasBoot() {
+	public boolean doesHaveBoot() {
 		return hasBoot;
 	}
 

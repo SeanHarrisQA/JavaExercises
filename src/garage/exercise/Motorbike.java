@@ -2,8 +2,8 @@ package garage.exercise;
 
 public class Motorbike extends Vehicle {
 
-	public Motorbike(int wheels, int riders, String make, String model) {
-		super(wheels, riders, make, model);
+	public Motorbike(int id, int riders, String make, String model) {
+		super(id, riders, make, model);
 	}
 
 	public Motorbike() {
