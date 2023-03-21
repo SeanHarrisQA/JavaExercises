@@ -1,5 +1,6 @@
 package garage.exercise;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import xceptions.VehicleNotFoundException;
@@ -58,19 +59,42 @@ public class Test {
 //		garage.emptyGarage();
 //		garage.showOff();
 
-		System.out.println("Please enter your vehicle id: ");
-		Integer id = null;
-		try (Scanner scan = new Scanner(System.in);) {
-//			id = scan.nextInt();
-			Vehicle newV = garage.findByID(id);
-			System.out.println("Found vehicle with id: " + newV.getID());
-		} catch (VehicleNotFoundException vnfe) {
-			System.out.println("No vehicle with ID: " + id);
-			// vnfe.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		System.out.println("Please enter your vehicle id: ");
+//		Integer id = null;
+//		try (Scanner scan = new Scanner(System.in);) {
+////			id = scan.nextInt();
+//			Vehicle newV = garage.findByID(id);
+//			System.out.println("Found vehicle with id: " + newV.getID());
+//		} catch (VehicleNotFoundException vnfe) {
+//			System.out.println("No vehicle with ID: " + id);
+//			// vnfe.printStackTrace();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 
+		Scanner scan = new Scanner(System.in);
+		try {
+			Integer id = null;
+			Vehicle newV = null;
+			do {
+				System.out.println("Please enter your vehicle id (Enter 0 to stop): ");
+				id = scan.nextInt();
+				try {
+					newV = garage.findByID(id);
+					System.out.println("Found vehicle with id: " + newV.getID());
+				} catch (VehicleNotFoundException vnfe) {
+					if (id != 0)
+						System.out.println("No vehicle with ID: " + id);
+					else
+						System.out.println("Search complete");
+				} catch (InputMismatchException e) {
+					System.out.println("help");
+					e.printStackTrace();
+				}
+			} while (id != 0);
+		} finally {
+			scan.close();
+		}
 		System.out.println("EOF");
 	}
 
