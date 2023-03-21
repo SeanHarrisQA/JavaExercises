@@ -1,5 +1,9 @@
 package garage.exercise;
 
+import java.util.Scanner;
+
+import xceptions.VehicleNotFoundException;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -15,43 +19,59 @@ public class Test {
 		garage.addVehicle(c2);
 		garage.addVehicle(m3);
 		garage.addVehicle(b1);
+		garage.addVehicle(c1);
 		garage.showOff();
+//
+//		System.out.println("Test running costs-------");
+//		garage.runningCosts();
+//
+//		System.out.println("Add vehicles using addVehicle() in garage-------");
+//		garage.addVehicle(m2);
+//		garage.addVehicle(c2);
+//		garage.addVehicle(m3);
+//		garage.addVehicle(b1);
+//		garage.showOff();
+//
+//		System.out.println("Remove vehicles by type-------");
+//		garage.removeThisType(m2);
+//		garage.showOff();
+//
+//		System.out.println("Add vehicles using addVehicle() in garage-------");
+//		garage.addVehicle(m2);
+//		garage.addVehicle(c2);
+//		garage.addVehicle(m3);
+//		garage.addVehicle(b1);
+//		garage.showOff();
+//
+//		System.out.println("Remove vehicles by id (2)-------");
+//		garage.removeById(2);
+//		garage.showOff();
+//
+//		System.out.println("Add vehicles using addVehicle() in garage-------");
+//		garage.addVehicle(m2);
+//		garage.addVehicle(c2);
+//		garage.addVehicle(m3);
+//		garage.addVehicle(b1);
+//		garage.showOff();
+//
+//		System.out.println("Remove all-------");
+//		garage.emptyGarage();
+//		garage.showOff();
 
-		System.out.println("Test running costs-------");
-		garage.runningCosts();
+		System.out.println("Please enter your vehicle id: ");
+		Integer id = null;
+		try (Scanner scan = new Scanner(System.in);) {
+//			id = scan.nextInt();
+			Vehicle newV = garage.findByID(id);
+			System.out.println("Found vehicle with id: " + newV.getID());
+		} catch (VehicleNotFoundException vnfe) {
+			System.out.println("No vehicle with ID: " + id);
+			// vnfe.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-		System.out.println("Add vehicles using addVehicle() in garage-------");
-		garage.addVehicle(m2);
-		garage.addVehicle(c2);
-		garage.addVehicle(m3);
-		garage.addVehicle(b1);
-		garage.showOff();
-
-		System.out.println("Remove vehicles by type-------");
-		garage.removeThisType(m2);
-		garage.showOff();
-
-		System.out.println("Add vehicles using addVehicle() in garage-------");
-		garage.addVehicle(m2);
-		garage.addVehicle(c2);
-		garage.addVehicle(m3);
-		garage.addVehicle(b1);
-		garage.showOff();
-
-		System.out.println("Remove vehicles by id (2)-------");
-		garage.removeById(2);
-		garage.showOff();
-
-		System.out.println("Add vehicles using addVehicle() in garage-------");
-		garage.addVehicle(m2);
-		garage.addVehicle(c2);
-		garage.addVehicle(m3);
-		garage.addVehicle(b1);
-		garage.showOff();
-
-		System.out.println("Remove all-------");
-		garage.emptyGarage();
-		garage.showOff();
+		System.out.println("EOF");
 	}
 
 }

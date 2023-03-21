@@ -3,6 +3,8 @@ package garage.exercise;
 import java.util.ArrayList;
 import java.util.List;
 
+import xceptions.VehicleNotFoundException;
+
 public class Garage {
 
 	public List<Vehicle> garage = new ArrayList<>();
@@ -16,6 +18,15 @@ public class Garage {
 			}
 		}
 		return null;
+	}
+
+	public Vehicle findByID(int id) throws VehicleNotFoundException {
+		for (Vehicle vehicle : this.garage) {
+			if (vehicle.getID() == id) {
+				return vehicle;
+			}
+		}
+		throw new VehicleNotFoundException("No vehicle with id: " + id);
 	}
 
 	public void showOff() {
